@@ -12,7 +12,7 @@ steps:
   clone:
     title: "Cloning repository"
     type: "git-clone"
-    repo: "Mansipande28/modules"
+    repo: "Mansipande28/CF-TF"
     revision: "${{CF_BRANCH}}"
     git: "github"
     stage: "clone"
@@ -28,7 +28,7 @@ steps:
   plan:
     title: Terraform Plan
     type: freestyle
-    working_directory: './modules'
+    working_directory: './CF-TF'
     arguments:
       image: 'hashicorp/terraform'
       commands:
@@ -45,7 +45,7 @@ steps:
   deploy:
     title: Terraform Apply
     type: freestyle
-    working_directory: './modules'
+    working_directory: './CF-TF'
     arguments:
       image: 'hashicorp/terraform'
       commands:
